@@ -24,8 +24,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 # IR
 PRODUCT_PACKAGES += \
 	android.hardware.ir@1.0-impl \
