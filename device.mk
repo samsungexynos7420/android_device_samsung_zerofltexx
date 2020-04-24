@@ -26,9 +26,6 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Inherit from universal7420-common
-$(call inherit-product, device/samsung/universal7420-common/device-common.mk)
-
 # IR
 PRODUCT_PACKAGES += \
 	android.hardware.ir@1.0-impl \
@@ -56,6 +53,13 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    WifiOverlay
+
+# Inherit from universal7420-common
+$(call inherit-product, device/samsung/universal7420-common/device-common.mk)
 
 # Call the proprietary
 $(call inherit-product, vendor/samsung/zerofltexx/zerofltexx-vendor.mk)
