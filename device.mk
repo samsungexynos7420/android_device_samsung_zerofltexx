@@ -25,6 +25,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Inherit from universal7420-common
 $(call inherit-product, device/samsung/universal7420-common/device-common.mk)
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
