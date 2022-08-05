@@ -62,6 +62,3 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3124019200
 
 # Radio
 BOARD_MODEM_TYPE := ss333
-
-# Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7420.recovery
