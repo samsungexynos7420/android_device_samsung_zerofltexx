@@ -38,10 +38,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libexynoscamera_shim
 
-# Touch features
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung
-
 # Cpboot-daemon
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/cbd:$(TARGET_COPY_OUT_SYSTEM)/bin/cbd
