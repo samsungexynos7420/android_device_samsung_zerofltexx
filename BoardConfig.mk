@@ -47,4 +47,4 @@ TARGET_SPECIFIC_HEADER_PATH += device/samsung/zerofltexx/include
 TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 
 # Manifest
-DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/configs/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
