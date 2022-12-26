@@ -48,6 +48,3 @@ TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 
 # Manifest
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/configs/manifest.xml
-
-# Radio
-BOARD_MODEM_TYPE := ss333
