@@ -24,17 +24,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml
 
-# Camera-Shim
-PRODUCT_PACKAGES += \
-	libexynoscamera_shim
-
 # Cpboot-daemon
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/cbd:$(TARGET_COPY_OUT_SYSTEM)/bin/cbd
-
-# Fingerprint-Shim
-PRODUCT_PACKAGES += \
-	libbauthtzcommon_shim
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
