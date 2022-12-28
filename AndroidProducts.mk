@@ -21,3 +21,5 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     lineage_zerofltexx-userdebug
+    lineage_zerofltexx-userdebug \
+    lineage_zerofltexx-eng
