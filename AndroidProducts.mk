@@ -20,6 +20,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_PATH)/lineage_zerofltexx.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_zerofltexx-userdebug
     lineage_zerofltexx-userdebug \
+    lineage_zerofltexx-user \
     lineage_zerofltexx-eng
