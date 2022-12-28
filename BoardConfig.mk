@@ -38,6 +38,7 @@ TARGET_LD_SHIM_LIBS += \
 
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
+	/system/lib/libbauthserver.so|/vendor/lib/libbauthtzcommon_shim.so \
 	/system/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so
 
 # Include path
