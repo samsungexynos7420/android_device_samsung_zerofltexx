@@ -16,6 +16,8 @@
 
 LOCAL_PATH := device/samsung/zerofltexx
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
@@ -23,11 +25,6 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# Inherit from universal7420-common
-$(call inherit-product, device/samsung/universal7420-common/device-common.mk)
 
 # IR
 PRODUCT_PACKAGES += \
@@ -58,6 +55,9 @@ PRODUCT_COPY_FILES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
+# Inherit from universal7420-common
+$(call inherit-product, device/samsung/universal7420-common/device-common.mk)
 
 # Call the proprietary
 $(call inherit-product, vendor/samsung/zerofltexx/zerofltexx-vendor.mk)
