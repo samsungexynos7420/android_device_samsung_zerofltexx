@@ -28,6 +28,9 @@ LOCAL_PATH := device/samsung/zerofltexx
 # Assert
 TARGET_OTA_ASSERT_DEVICE := zeroflte,zerofltexx,zeroflteskt
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_zeroflte
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
