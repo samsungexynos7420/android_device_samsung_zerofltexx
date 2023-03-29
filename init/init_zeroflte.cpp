@@ -86,12 +86,54 @@ void vendor_load_properties()
     std::string device;
 
     if (bootloader.find("G920F") != std::string::npos) {
-        /* SM-J700F */
+        /* zerofltexx */
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys");
         property_override("ro.system.build.fingerprint", "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys");
         property_override("ro.build.description", "zerofltexx-user 7.0 NRD90M G920FXXU6EVG1 release-keys");
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G920F");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "zerofltexx");
+    }else if (bootloader.find("G920FD") != std::string::npos) {
+        /* zerofltexxduos */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys");
+        property_override("ro.system.build.fingerprint", "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys");
+        property_override("ro.build.description", "zerofltexx-user 7.0 NRD90M G920FXXU6EVG1 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G920F");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "zerofltexx");
+    }else if (bootloader.find("G920W8") != std::string::npos) {
+        /* zerofltecan */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/zerofltecan/zerofltecan:7.0/NRD90M/G920W8VLU6DVG1:user/release-keys");
+        property_override("ro.system.build.fingerprint", "samsung/zerofltecan/zerofltecan:7.0/NRD90M/G920W8VLU6DVG1:user/release-keys");
+        property_override("ro.build.description", "zerofltecan-user 7.0 NRD90M G920W8VLU6DVG1 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G920W8");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "zerofltecan");
+    }else if (bootloader.find("G920I") != std::string::npos) {
+        /* zerofltexxduos */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys");
+        property_override("ro.system.build.fingerprint", "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys");
+        property_override("ro.build.description", "zerofltexx-user 7.0 NRD90M G920FXXU6EVG1 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G920I");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "zerofltexx");
+    }else if (bootloader.find("G920S") != std::string::npos) {
+        /* zeroflteskt */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/zeroflteskt/zeroflte:7.0/NRD90M/G920SKSU3EVG1:user/release-keys");
+        property_override("ro.system.build.fingerprint", "samsung/zeroflteskt/zeroflte:7.0/NRD90M/G920SKSU3EVG1:user/release-keys");
+        property_override("ro.build.description", "zeroflteskt-user 7.0 NRD90M G920SKSU3EVG1 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G920S");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "zeroflteskt");
+    }else if (bootloader.find("G920P") != std::string::npos) {
+        /* zeroflteskt */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/zerofltespr/zerofltespr:7.0/NRD90M/G920PVPS4DRC2:user/release-keys");
+        property_override("ro.system.build.fingerprint", "samsung/zerofltespr/zerofltespr:7.0/NRD90M/G920PVPS4DRC2:user/release-keys");
+        property_override("ro.build.description", "zerofltespr-user 7.0 NRD90M G920PVPS4DRC2 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G920P");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "zerofltespr");
+    }else if (bootloader.find("G920L") != std::string::npos) {
+        /* zeroflteskt */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/zerofltelgt/zerofltelgt:7.0/NRD90M/G920LKLU3EVG1:user/release-keys");
+        property_override("ro.system.build.fingerprint", "samsung/zerofltelgt/zerofltelgt:7.0/NRD90M/G920LKLU3EVG1:user/release-keys");
+        property_override("ro.build.description", "zerofltelgt-user 7.0 NRD90M G920LKLU3EVG1 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G920L");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "zerofltelgt");
     }
 
     set_sim_info();
