@@ -36,13 +36,13 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Camera-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
+	/vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
+	/vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
 
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/lib/libbauthserver.so|/vendor/lib/libbauthtzcommon_shim.so \
-	/system/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so
+	/vendor/lib/libbauthserver.so|/vendor/lib/libbauthtzcommon_shim.so \
+	/vendor/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/zerofltexx/include
