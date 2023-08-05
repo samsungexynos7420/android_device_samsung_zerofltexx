@@ -820,12 +820,6 @@
 	</path>
 
     <!-- NB volume -->
-    <!-- call default volume -->
-	<path name="gain-incall_default-handset-mic">
-		<ctl name="IN1R Digital Volume" value="128" />
-		<ctl name="IN3L Digital Volume" value="128" />
-	</path>
-    
 	<path name="gain-incall_nb-handset-mic">
 		<ctl name="IN1L Digital Volume" value="136" />
 		<ctl name="IN3L Digital Volume" value="136" />
@@ -1036,8 +1030,8 @@
     </path>
 
 	<path name="voice-mic">
-		<path name="incall_default-handset-mic"/>
-		<path name="gain-incall_default-handset-mic"/>
+		<path name="incall_nb-speaker-mic"/>
+		<path name="gain-incall_nb-speaker-mic"/>
 	</path>
 
 	<path name="voice-earpiece-mic">
