@@ -204,15 +204,8 @@
 		<ctl name="HPOUT1R Input 1" value="AIF1RX2" />
 	</path>
 
-    <path name="media-speaker-headset">
-        <path name="unmute-headset" />
-        <ctl name="HPOUT1 DRE Switch" value="1" />
-		<ctl name="HPOUT1 EDRE Switch" value="1" />
-		<ctl name="HPOUT1L Input 1" value="AIF1RX1" />
-		<ctl name="HPOUT1R Input 1" value="AIF1RX2" />
-    </path>
-    
     <path name="incall_nb-handset">
+		<path name="mute-headset" />
 		<path name="mute-speaker" />
 		<ctl name="AIF2 Mode" value="Slave" />
 		<ctl name="CP Mode" value="Inverting" />
@@ -226,8 +219,12 @@
 		<ctl name="DSP4 Aux 1" value="ASRC1IN2L" />
 		<ctl name="DSP4 Aux 2" value="ISRC2DEC1" />
 		<ctl name="ISRC2INT1 Input" value="DSP4.3" />
+		<ctl name="HPOUT3L Input 2 Volume" value="0" />
+		<ctl name="HPOUT3R Input 2 Volume" value="0" />
 		<ctl name="HPOUT3L Input 2" value="ISRC2INT1" />
 		<ctl name="HPOUT3R Input 2" value="ISRC2INT1" />
+		<ctl name="HPOUT3L Input 2 Volume" value="32" />
+		<ctl name="HPOUT3R Input 2 Volume" value="32" />
 		<ctl name="HPOUT3L Input 1" value="AIF1RX1" />
 		<ctl name="HPOUT3R Input 1" value="AIF1RX2" />
 		<ctl name="RCV Switch" value="1" />
@@ -427,6 +424,19 @@
 		<ctl name="AIF1TX1 Input 1" value="ISRC2INT1" />
 		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
 	</path>
+
+    <path name="camcorder-headphone-mic">
+        <path name="camcorder-mic-oe" />
+    </path>
+
+
+        <!-- camcorder input -->
+       <path name="camcorder-mic-oe">
+               <path name="capture_channel_left"/>
+               <path name="main-mic" />
+               <path name="2nd-mic" />
+                <path name="gain-media-mic"/>
+       </path>
 
     <!-- NB -->
 	<path name="incall_nb-handset-mic">
@@ -850,22 +860,39 @@
 
 	<!-- Output -->
 	<path name="earpiece">
+		<!-- Route configuration -->
+		<path name="mute-speaker" />
+		<path name="mute-headset" />
+		<!-- Output configuration -->
 		<path name="media-handset"/>
 		<path name="gain-media-handset"/>
 	</path>
 
 	<path name="speaker">
+		<!-- Route configuration -->
+		<path name="unmute-speaker" />
+		<path name="mute-headset" />
+		<!-- Output configuration -->
 		<path name="media-speaker"/>
 		<path name="gain-media-speaker"/>
 	</path>
 
 	<path name="headphones">
+		<!-- Route configuration -->
+		<path name="mute-speaker" />
+		<path name="unmute-headset" />
+		<!-- Output configuration -->
 		<path name="media-headset"/>
 		<path name="gain-media-headset"/>
 	</path>
 
 	<path name="speaker-and-headphones">
-		<path name="media-speaker-headset"/>
+		<!-- Route configuration -->
+		<path name="unmute-speaker" />
+		<path name="unmute-headset" />
+		<!-- Output configuration -->
+		<path name="media-speaker"/>
+		<path name="media-headset"/>
 		<path name="gain-media-speaker-headset"/>
 	</path>
 
@@ -992,10 +1019,7 @@
 	</path>
 
     <path name="camcorder-mic">
-        <path name="capture_channel_left"/>
-        <path name="main-mic" />
-        <path name="2nd-mic" />
-        <path name="gain-media-mic"/>
+        <path name="camcorder-mic-oe" />
         <path name="gain-camcorder-mic-oe" />
     </path>
 
