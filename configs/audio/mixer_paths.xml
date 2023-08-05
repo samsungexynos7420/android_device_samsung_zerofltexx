@@ -633,10 +633,10 @@
 
     <path name="gain-media-headset">
         <ctl name="Noise Gate Switch" value="0" />
-        <ctl name="HPOUT1L Impedance Volume" value="70" />
-        <ctl name="HPOUT1R Impedance Volume" value="70" />
-        <ctl name="HPOUT1L Input 1 Volume" value="26" />
-        <ctl name="HPOUT1R Input 1 Volume" value="26" />
+        <ctl name="HPOUT1L Impedance Volume" value="105" />
+        <ctl name="HPOUT1R Impedance Volume" value="105" />
+        <ctl name="HPOUT1L Input 1 Volume" value="32" />
+        <ctl name="HPOUT1R Input 1 Volume" value="32" />
 </path>
 
 	<path name="gain-media-speaker-headset">
