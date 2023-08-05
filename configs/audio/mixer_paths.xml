@@ -818,6 +818,23 @@
 		<ctl name="IN2L Digital Volume" value="128" />
 		<ctl name="LHPF1 Input 1 Volume" value="32" />
 	</path>
+    
+    <!-- communication input volume -->
+	<path name="gain-communication-handset-mic">
+		<ctl name="IN1L Digital Volume" value="140" />
+		<ctl name="LHPF1 Input 1 Volume" value="32" />
+	</path>
+
+	<path name="gain-communication-speaker-mic">
+		<ctl name="IN3L Digital Volume" value="128" />
+		<ctl name="LHPF2 Input 1 Volume" value="32" />
+	</path>
+
+	<path name="gain-communication-headset-mic">
+		<ctl name="IN2L Volume" value="38" />
+		<ctl name="IN2L Digital Volume" value="140" />
+		<ctl name="LHPF1 Input 1 Volume" value="32" />
+	</path>
 
     <!-- NB volume -->
     <!-- call default volume -->
@@ -1014,25 +1031,24 @@
 
 	<!-- Input -->
 	<path name="earpiece-mic">
-		<path name="capture_channel_left"/>
-		<path name="main-mic"/>
-		<path name="gain-media-mic"/>
+		<path name="communication-handset-mic"/>
+		<path name="gain-communication-handset-mic"/>
 	</path>
 
 	<path name="speaker-mic">
-		<path name="capture_channel_left"/>
-		<path name="main-mic"/>
-		<path name="gain-media-mic"/>
+		<path name="communication-speaker-mic"/>
+		<path name="gain-communication-speaker-mic"/>
 	</path>
 
 	<path name="headset-mic">
-		<ctl name="LHPF1 Input 1" value="IN2L" />
-		<ctl name="Headset Mic Switch" value="1" />
+        <path name="communication-headset-mic"/>
+		<path name="gain-communication-headset-mic"/>
 	</path>
 	
 	<path name="media-headset-mic">
 		<path name="capture_channel_left" />
-		<path name="headset-mic" />
+		<ctl name="LHPF1 Input 1" value="IN2L" />
+		<ctl name="Headset Mic Switch" value="1" />
     </path>
 
 	<path name="voice-mic">
