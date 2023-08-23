@@ -48,10 +48,10 @@ TARGET_SPECIFIC_HEADER_PATH += device/samsung/zerofltexx/include
 TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 
 # Manifest
-DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
 
 # Compatibility Matrix
-DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/compatibility_matrix.xml
 
 # Properties
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
