@@ -50,8 +50,5 @@ TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 # Manifest
 DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
 
-# Compatibility Matrix
-DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/compatibility_matrix.xml
-
 # Properties
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
