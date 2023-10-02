@@ -44,6 +44,9 @@ TARGET_LD_SHIM_LIBS += \
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_zeroflte
+
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 
