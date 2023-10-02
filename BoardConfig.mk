@@ -53,5 +53,9 @@ TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 # Manifest
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
