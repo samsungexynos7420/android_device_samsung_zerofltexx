@@ -39,3 +39,6 @@ TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 
 # Manifest
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
+# inherit from the proprietary version
+-include vendor/samsung/zeroxlte/BoardConfigVendor.mk
