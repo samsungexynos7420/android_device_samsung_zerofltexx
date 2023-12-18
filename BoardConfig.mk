@@ -45,7 +45,7 @@ TARGET_LD_SHIM_LIBS += \
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
+TARGET_KERNEL_CONFIG := exynos7420-zeroflte_defconfig
 
 # Manifest
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
