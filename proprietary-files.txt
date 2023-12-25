@@ -65,6 +65,10 @@ lib64/libprotobuf-cpp-full.so:vendor/lib64/libprotobuf-cpp-fl26.so
 vendor/lib/hw/nfc_nci.default.so|c6b2292323b827f3261ba33956604b90de8a29cd
 vendor/lib64/hw/nfc_nci.default.so|347836411179d98a47c7de7bf9e92ac00c5a742a
 
+# IR
+lib/hw/consumerir.exynos5.so:vendor/lib/hw/consumerir.exynos5.so
+lib64/hw/consumerir.exynos5.so:vendor/lib64/hw/consumerir.exynos5.so
+
 # NXP Noise Cancelling
 vendor/etc/nxp/AzControlParams_SPEAKER.txt
 vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_ANALOG_DOCK.txt
