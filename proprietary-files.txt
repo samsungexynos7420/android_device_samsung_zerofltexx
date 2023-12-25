@@ -1,4 +1,4 @@
-# All unpinned blobs are from zerofltexx stock (N)
+# All unpinned blobs are from zerofltexx stock (N) unless stated otherwise
 
 # Fingerprint
 lib/libbauthserver.so:vendor/lib/libbauthserver.so
@@ -43,7 +43,9 @@ app/mcRegistry/ffffffffd00000000000000000000016.tlbin:vendor/app/mcRegistry/ffff
 app/mcRegistry/ffffffffd00000000000000000000017.tlbin:vendor/app/mcRegistry/ffffffffd00000000000000000000017.tlbin
 app/mcRegistry/fffffffff0000000000000000000001b.tlbin:vendor/app/mcRegistry/fffffffff0000000000000000000001b.tlbin
 app/mcRegistry/fffffffff0000000000000000000001e.tlbin:vendor/app/mcRegistry/fffffffff0000000000000000000001e.tlbin
-bin/mcDriverDaemon:vendor/bin/mcDriverDaemon
+
+# Mobicore from A810FXXU2CRL1
+vendor/bin/mcDriverDaemon
 vendor/lib/libMcClient.so
 vendor/lib64/libMcClient.so
 vendor/lib/libMcRegistry.so
