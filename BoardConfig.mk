@@ -31,11 +31,6 @@ TARGET_OTA_ASSERT_DEVICE := zeroflte,zerofltexx,zeroflteskt
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
-# Camera-shims
-TARGET_LD_SHIM_LIBS += \
-	/vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-	/vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
-
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
 	/vendor/lib/libbauthserver.so|/vendor/lib/libbauthtzcommon_shim.so \
