@@ -59,3 +59,5 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# inherit from the proprietary version
+include vendor/samsung/zerofltexx/BoardConfigVendor.mk
