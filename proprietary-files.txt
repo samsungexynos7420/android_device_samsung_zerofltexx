@@ -1,14 +1,14 @@
 # All unpinned blobs are from zerofltexx stock (N)
 
 # Fingerprint
-lib/libbauthserver.so:vendor/lib/libbauthserver.so
-lib64/libbauthserver.so:vendor/lib64/libbauthserver.so
-lib/libbauthtzcommon.so:vendor/lib/libbauthtzcommon.so
-lib64/libbauthtzcommon.so:vendor/lib64/libbauthtzcommon.so
-lib/libegis_fp_normal_sensor_test.so:vendor/lib/libegis_fp_normal_sensor_test.so
-lib64/libegis_fp_normal_sensor_test.so:vendor/lib64/libegis_fp_normal_sensor_test.so
-lib/libsynaFpSensorTestNwd.so:vendor/lib/libsynaFpSensorTestNwd.so
-lib64/libsynaFpSensorTestNwd.so:vendor/lib64/libsynaFpSensorTestNwd.so
+-lib/libbauthserver.so:vendor/lib/libbauthserver.so
+-lib64/libbauthserver.so:vendor/lib64/libbauthserver.so
+-lib/libbauthtzcommon.so:vendor/lib/libbauthtzcommon.so
+-lib64/libbauthtzcommon.so:vendor/lib64/libbauthtzcommon.so
+-lib/libegis_fp_normal_sensor_test.so:vendor/lib/libegis_fp_normal_sensor_test.so
+-lib64/libegis_fp_normal_sensor_test.so:vendor/lib64/libegis_fp_normal_sensor_test.so
+-lib/libsynaFpSensorTestNwd.so:vendor/lib/libsynaFpSensorTestNwd.so
+-lib64/libsynaFpSensorTestNwd.so:vendor/lib64/libsynaFpSensorTestNwd.so
 
 # Mobicore
 app/FFFFFFFF000000000000000000000001.drbin:vendor/app/FFFFFFFF000000000000000000000001.drbin
@@ -43,25 +43,28 @@ app/mcRegistry/ffffffffd00000000000000000000016.tlbin:vendor/app/mcRegistry/ffff
 app/mcRegistry/ffffffffd00000000000000000000017.tlbin:vendor/app/mcRegistry/ffffffffd00000000000000000000017.tlbin
 app/mcRegistry/fffffffff0000000000000000000001b.tlbin:vendor/app/mcRegistry/fffffffff0000000000000000000001b.tlbin
 app/mcRegistry/fffffffff0000000000000000000001e.tlbin:vendor/app/mcRegistry/fffffffff0000000000000000000001e.tlbin
-bin/mcDriverDaemon:vendor/bin/mcDriverDaemon
-vendor/lib/libMcClient.so
-vendor/lib64/libMcClient.so
-vendor/lib/libMcRegistry.so
-vendor/lib64/libMcRegistry.so
+-bin/mcDriverDaemon:vendor/bin/mcDriverDaemon
 
 # Radio
-lib/libsec-ril-dsds.so:vendor/lib/libsec-ril-dsds.so
-lib64/libsec-ril-dsds.so:vendor/lib64/libsec-ril-dsds.so
-lib/libsec-ril.so:vendor/lib/libsec-ril.so
-lib64/libsec-ril.so:vendor/lib64/libsec-ril.so
+-lib/libsec-ril-dsds.so:vendor/lib/libsec-ril-dsds.so
+-lib64/libsec-ril-dsds.so:vendor/lib64/libsec-ril-dsds.so
+-lib/libsec-ril.so:vendor/lib/libsec-ril.so
+-lib64/libsec-ril.so:vendor/lib64/libsec-ril.so
 
 # Protobuf 2.6 - precompiled from https://github.com/Exynos7580/android_external_protobuf-compat-2.6
-lib/libprotobuf-cpp-full.so:vendor/lib/libprotobuf-cpp-fl26.so
-lib64/libprotobuf-cpp-full.so:vendor/lib64/libprotobuf-cpp-fl26.so
+-lib/libprotobuf-cpp-full.so:vendor/lib/libprotobuf-cpp-fl26.so
+-lib64/libprotobuf-cpp-full.so:vendor/lib64/libprotobuf-cpp-fl26.so
+
+# Mobicore
+-lib/libMcRegistry.so:vendor/lib/libMcRegistry.so
+-lib64/libMcRegistry.so:vendor/lib64/libMcRegistry.so
+-lib/libMcClient.so:vendor/lib/libMcClient.so
+-lib64/libMcClient.so:vendor/lib64/libMcClient.so
+
 
 # NFC - A810FXXU2CRL1 (O)
-vendor/lib/hw/nfc_nci.default.so|c6b2292323b827f3261ba33956604b90de8a29cd
-vendor/lib64/hw/nfc_nci.default.so|347836411179d98a47c7de7bf9e92ac00c5a742a
+-vendor/lib/hw/nfc_nci.default.so|c6b2292323b827f3261ba33956604b90de8a29cd
+-vendor/lib64/hw/nfc_nci.default.so|347836411179d98a47c7de7bf9e92ac00c5a742a
 
 # NXP Noise Cancelling
 vendor/etc/nxp/AzControlParams_SPEAKER.txt
@@ -215,5 +218,5 @@ vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_EARPIECE.txt
 vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_SPEAKER.txt
 vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
 vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
-vendor/lib/libLifevibes_lvverx.so:vendor/lib/soundfx/libLifevibes_lvverx.so
-vendor/lib/libLifevibes_lvvetx.so:vendor/lib/soundfx/libLifevibes_lvvetx.so
+-vendor/lib/libLifevibes_lvverx.so:vendor/lib/soundfx/libLifevibes_lvverx.so
+-vendor/lib/libLifevibes_lvvetx.so:vendor/lib/soundfx/libLifevibes_lvvetx.so
