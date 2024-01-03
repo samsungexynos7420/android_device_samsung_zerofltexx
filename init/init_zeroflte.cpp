@@ -31,11 +31,34 @@
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 
-#include "property_service.h"
+#include <android-base/file.h>
+#include <android-base/logging.h>
+#include <android-base/strings.h>
+#include <android-base/properties.h>
 
 #include "init_universal7420.h"
 
 using android::base::GetProperty;
+using android::base::ReadFileToString;
+using android::base::Trim;
+
+void set_sim_info()
+{
+    const char *simslot_count_path = "/proc/simslot_count";
+    std::string simslot_count;
+    
+    if (ReadFileToString(simslot_count_path, &simslot_count)) {
+        simslot_count = Trim(simslot_count); // strip newline
+        property_override("ro.multisim.simslotcount", simslot_count.c_str());
+        if (simslot_count.compare("2") == 0) {
+            property_override("vendor.rild.libpath2", "/vendor/lib/libsec-ril-dsds.so");
+            property_override("persist.radio.multisim.config", "dsds");
+        }
+    }
+    else {
+        LOG(ERROR) << "Could not open '" << simslot_count_path << "'\n";
+    }
+}
 
 void vendor_load_properties()
 {
@@ -77,6 +100,7 @@ void vendor_load_properties()
         gsm_properties("9");
     }
 
+	set_sim_info();
     std::string device = GetProperty("ro.product.device", "");
     LOG(ERROR) << "Found bootloader id " << bootloader <<  " setting build properties for "
         << device <<  " device" << std::endl;
