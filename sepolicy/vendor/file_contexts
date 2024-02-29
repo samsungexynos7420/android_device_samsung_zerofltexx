@@ -1,0 +1,17 @@
+################
+# DEVICES 
+################
+
+/dev/block/NAD_REFER         u:object_r:NAD_REFER_block_device:s0
+/dev/block/sda1              u:object_r:bota_block_device:s0
+/dev/block/sda2              u:object_r:bota_block_device:s0
+/dev/block/sda4              u:object_r:param_block_device:s0
+/dev/block/sda7              u:object_r:ota_block_device:s0
+/dev/block/sda9              u:object_r:tombstones_block_device:s0
+/dev/block/sda10             u:object_r:dnt_block_device:s0
+/dev/block/sda12             u:object_r:steady_block_device:s0
+/dev/block/sda13             u:object_r:persdata_block_device:s0
+/dev/block/sda15             u:object_r:system_block_device:s0
+/dev/block/sda16             u:object_r:cache_block_device:s0
+/dev/block/sda17             u:object_r:hidden_block_device:s0
+/dev/block/sda18             u:object_r:userdata_block_device:s0
