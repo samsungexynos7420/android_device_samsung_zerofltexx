@@ -30,78 +30,73 @@
 
 #include <android-base/logging.h>
 #include <android-base/properties.h>
-
 #include <android-base/file.h>
-#include <android-base/logging.h>
 #include <android-base/strings.h>
-#include <android-base/properties.h>
 
 #include "init_universal7420.h"
 
-using android::base::GetProperty;
-using android::base::ReadFileToString;
-using android::base::Trim;
-
-void set_sim_info()
-{
-    const char *simslot_count_path = "/proc/simslot_count";
+void set_sim_info() {
+    const char* simslot_count_path = "/proc/simslot_count";
     std::string simslot_count;
     
-    if (ReadFileToString(simslot_count_path, &simslot_count)) {
-        simslot_count = Trim(simslot_count); // strip newline
+    if (android::base::ReadFileToString(simslot_count_path, &simslot_count)) {
+        simslot_count = android::base::Trim(simslot_count); // strip newline
         property_override("ro.multisim.simslotcount", simslot_count.c_str());
-        if (simslot_count.compare("2") == 0) {
+        if (simslot_count == "2") {
             property_override("vendor.rild.libpath2", "/vendor/lib/libsec-ril-dsds.so");
             property_override("persist.radio.multisim.config", "dsds");
         }
-    }
-    else {
+    } else {
         LOG(ERROR) << "Could not open '" << simslot_count_path << "'\n";
     }
 }
 
-void vendor_load_properties()
-{
-    std::string bootloader = GetProperty("ro.bootloader", "");
+void set_device_properties(const std::string& bootloader, const std::string& device) {
+    std::string build_description;
+    std::string fingerprint;
+    std::string model;
+    std::string name;
 
     if (bootloader.find("G920F") == 0) {
-        /* heroltexx */
-        property_override("ro.build.description", "zerofltexx-user 7.0 NRD90M G920FXXU6EVG1 release-keys");
-        set_ro_product_prop("device", "zerofltexx");
-        set_ro_build_prop("fingerprint", "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys");
-        set_ro_product_prop("model", "SM-G920F");
-        set_ro_product_prop("name", "zerofltexx");
-        gsm_properties("9");
+        build_description = "zerofltexx-user 7.0 NRD90M G920FXXU6EVG1 release-keys";
+        model = "SM-G920F";
+        name = "zerofltexx";
+        fingerprint = "samsung/zerofltexx/zeroflte:7.0/NRD90M/G920FXXU6EVG1:user/release-keys";
     } else if (bootloader.find("G920W8") == 0) {
-        /* heroltebmc */
-        property_override("ro.build.description", "zerofltecan-user 7.0 NRD90M G920W8VLU6DVG1 release-keys");
-        set_ro_product_prop("device", "zerofltecan");
-        set_ro_build_prop("fingerprint", "samsung/zerofltecan/zerofltecan:7.0/NRD90M/G920W8VLU6DVG1:user/release-keys");
-        set_ro_product_prop("model", "SM-G920W8");
-        set_ro_product_prop("name", "zerofltecan");
-        gsm_properties("9");
+        build_description = "zerofltecan-user 7.0 NRD90M G920W8VLU6DVG1 release-keys";
+        model = "SM-G920W8";
+        name = "zerofltecan";
+        fingerprint = "samsung/zerofltecan/zerofltecan:7.0/NRD90M/G920W8VLU6DVG1:user/release-keys";
     } else if (bootloader.find("G920S") == 0) {
-        /* herolteskt */
-        property_override("ro.build.description", "zeroflteskt-user 7.0 NRD90M G920SKSU3EVG1 release-keys");
-        set_ro_product_prop("device", "zeroflteskt");
-        set_ro_build_prop("fingerprint", "samsung/zeroflteskt/zeroflte:7.0/NRD90M/G920SKSU3EVG1:user/release-keys");
-        set_ro_product_prop("model", "SM-G920S");
-        set_ro_product_prop("name", "zeroflteskt");
-        gsm_properties("9");
-    }  else if (bootloader.find("G920L") == 0) {
-        /* heroltelgt */
-        property_override("ro.build.description", "zerofltelgt-user 7.0 NRD90M G920LKLU3EVG1 release-keys");
-        set_ro_product_prop("device", "zerofltelgt");
-        set_ro_build_prop("fingerprint", "samsung/zerofltelgt/zerofltelgt:7.0/NRD90M/G920LKLU3EVG1:user/release-keys");
-        set_ro_product_prop("model", "SM-G920L");
-        set_ro_product_prop("name", "zerofltelgt");
-        gsm_properties("9");
+        build_description = "zeroflteskt-user 7.0 NRD90M G920SKSU3EVG1 release-keys";
+        model = "SM-G920S";
+        name = "zeroflteskt";
+        fingerprint = "samsung/zeroflteskt/zeroflte:7.0/NRD90M/G920SKSU3EVG1:user/release-keys";
+    } else if (bootloader.find("G920L") == 0) {
+        build_description = "zerofltelgt-user 7.0 NRD90M G920LKLU3EVG1 release-keys";
+        model = "SM-G920L";
+        name = "zerofltelgt";
+        fingerprint = "samsung/zerofltelgt/zerofltelgt:7.0/NRD90M/G920LKLU3EVG1:user/release-keys";
     } else {
-        gsm_properties("9");
+        LOG(ERROR) << "Unknown bootloader id " << bootloader << ", unable to set device properties\n";
+        return;
     }
 
-	set_sim_info();
-    std::string device = GetProperty("ro.product.device", "");
-    LOG(ERROR) << "Found bootloader id " << bootloader <<  " setting build properties for "
-        << device <<  " device" << std::endl;
+    property_override("ro.build.description", build_description.c_str());
+    set_ro_product_prop("device", device.c_str());
+    set_ro_build_prop("fingerprint", fingerprint.c_str());
+    set_ro_product_prop("model", model.c_str());
+    set_ro_product_prop("name", name.c_str());
+    gsm_properties("9");
+}
+
+void vendor_load_properties() {
+    std::string bootloader = android::base::GetProperty("ro.bootloader", "");
+    std::string device = android::base::GetProperty("ro.product.device", "");
+
+    set_device_properties(bootloader, device);
+    set_sim_info();
+
+    LOG(ERROR) << "Found bootloader id " << bootloader << " setting build properties for "
+               << device << " device" << std::endl;
 }
