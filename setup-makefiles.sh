@@ -32,11 +32,11 @@ write_headers
 
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
-###################################################################################################
-# CUSTOM PART START                                                                               #
-###################################################################################################
-OUTDIR=vendor/$VENDOR/$DEVICE
-(cat << EOF) >> $ANDROID_ROOT/$OUTDIR/Android.mk
+# Custom part start
+OUTDIR="vendor/$VENDOR/$DEVICE"
+ANDROID_MK="${ANDROID_ROOT}/${OUTDIR}/Android.mk"
+
+cat <<EOF >> "${ANDROID_MK}"
 include \$(CLEAR_VARS)
 
 LIFEVIBES_LIBS := libLifevibes_lvverx.so libLifevibes_lvvetx.so
@@ -51,9 +51,7 @@ LIFEVIBES_SYMLINKS := \$(addprefix \$(TARGET_OUT_VENDOR)/lib/,\$(notdir \$(LIFEV
 ALL_DEFAULT_INSTALLED_MODULES += \$(LIFEVIBES_SYMLINKS)
 
 EOF
-###################################################################################################
-# CUSTOM PART END                                                                                 #
-###################################################################################################
+# Custom part end
 
 # Done
 write_footers
