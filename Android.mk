@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,13 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 LOCAL_PATH := device/samsung/zerofltexx
 
-ifneq ($(filter zeroflte zerofltexx zeroflteskt,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),zeroflte)
+    include $(LOCAL_PATH)/zeroflte.mk
+endif
 
-  subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
-  $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
+ifeq ($(TARGET_DEVICE),zerofltexx)
+    include $(LOCAL_PATH)/zerofltexx.mk
+endif
 
+ifeq ($(TARGET_DEVICE),zeroflteskt)
+    include $(LOCAL_PATH)/zeroflteskt.mk
 endif
