@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
-key 158   BACK	VIRTUAL
-key 254 APP_SWITCH     VIRTUAL
+# Define virtual keys for Android devices
 
+# Virtual key with the keycode 158 mapped to the BACK function
+key 158   BACK    VIRTUAL
+
+# Virtual key with the keycode 254 mapped to the APP_SWITCH function
+key 254   APP_SWITCH     VIRTUAL
