@@ -19,75 +19,28 @@
 
 #include <telephony/ril.h>
 
-/*
- * Sound card specific defines.
- *
- * This is an example configuration for a WolfsonMicro WM1814 sound card.
- * Codec: Vegas
- *
- * If you driver does not support one of the devices, the id should not be
- * defined.
- */
-
 #define MIXER_CARD 0
 #define SOUND_CARD 0
 
-/* Playback */
 #define SOUND_DEEP_BUFFER_DEVICE 3
 #define SOUND_PLAYBACK_DEVICE 6
 #define SOUND_PLAYBACK_SCO_DEVICE 2
-
-/* Capture */
 #define SOUND_CAPTURE_DEVICE 0
 #define SOUND_CAPTURE_SCO_DEVICE 2
-
-/* Voice calls */
 #define SOUND_PLAYBACK_VOICE_DEVICE 1
 #define SOUND_CAPTURE_VOICE_DEVICE 1
-
-/* Wideband AMR callback */
-#ifdef RIL_UNSOL_SNDMGR_WB_AMR_REPORT
-  #undef RIL_UNSOL_SNDMGR_WB_AMR_REPORT
-#endif
-
-#define RIL_UNSOL_SNDMGR_WB_AMR_REPORT RIL_UNSOL_WB_AMR_STATE
-
-/* DSP offload */
 #define SOUND_COMPRESS_OFFLOAD_DEVICE 11
 
-/* Unusupported
-#define SOUND_CAPTURE_LOOPBACK_AEC_DEVICE 1
-#define SOUND_CAPTURE_HOTWORD_DEVICE 0
-*/
-
-/*
- * If the device has stereo speakers and the speakers are arranged on
- * different sides of the device you can activate this feature by
- * setting it to 1.
- */
 #define SWAP_SPEAKER_ON_SCREEN_ROTATION 0
-
-/*
- * You can that this to 1 if your kernel supports irq affinity for
- * fast mode. See /proc/asound/irq_affinity
- */
 #define SUPPORTS_IRQ_AFFINITY 0
 
-/*
- * ril_set_call_clock_sync() may cause unknown problems with the call-mic.
- * Uncomment this to disable the support for it.
- */
-#define DISABLE_CALL_CLOCK_SYNC
+#ifdef RIL_UNSOL_SNDMGR_WB_AMR_REPORT
+#undef RIL_UNSOL_SNDMGR_WB_AMR_REPORT
+#endif
+#define RIL_UNSOL_SNDMGR_WB_AMR_REPORT RIL_UNSOL_WB_AMR_STATE
 
-/*
- * The Wolfson/Cirruslogic chips need to shutdown the DAPM route completely
- * to be able to load a new firmware. Some of these chips need a delay after
- * shutodown to full poweroff the DSPs.
- *
- * A good value to start with is 10ms:
- *
- * #define DSP_POWEROFF_DELAY 10 * 1000
- */
-/* #define DSP_POWEROFF_DELAY 0 */
+#ifdef DISABLE_CALL_CLOCK_SYNC
+#undef DISABLE_CALL_CLOCK_SYNC
+#endif
 
 #endif // SAMSUNG_AUDIO_H
