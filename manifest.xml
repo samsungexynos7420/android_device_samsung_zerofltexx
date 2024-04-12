@@ -2,7 +2,7 @@
     <hal format="hidl">
         <name>android.hardware.ir</name>
         <transport>hwbinder</transport>
-        <impl level="generic"></impl>
+        <impl level="generic"/>
         <version>1.0</version>
         <interface>
             <name>IConsumerIr</name>
