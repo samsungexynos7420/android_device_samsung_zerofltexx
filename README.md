@@ -9,7 +9,7 @@
 | GPU                   | Mali-T760MP8                           |
 | Memory                | 3 GB RAM                               |
 | Shipped Android Version | 5.0.2 (Lollipop)                     |
-| Storage               | 32/64/128 GB                           |![Galaxy S6](https://wiki.lineageos.org/images/devices/zerofltexx.png "Galaxy S6")
+| Storage               | 32/64/128 GB                           |
 | MicroSD               | Not supported                          |
 | Battery               | Li-Ion 2600 mAh                        |
 | Dimensions            | 143.4 mm x 70.5 mm x 6.8 mm            |
@@ -18,3 +18,4 @@
 | Front Camera          | 5 MP, f/1.9, 22mm (wide), 1/4.1", 1.34µm |
 | Release Date          | April 2015                             |
 
+![Galaxy S6](https://wiki.lineageos.org/images/devices/zerofltexx.png "Galaxy S6")
