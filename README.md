@@ -18,4 +18,4 @@
 | Front Camera          | 5 MP, f/1.9, 22mm (wide), 1/4.1", 1.34µm |
 | Release Date          | April 2015                             |
 
-![Galaxy S6]("https://wiki.lineageos.org/images/devices/zerofltexx.png")
+![Galaxy S6](https://wiki.lineageos.org/images/devices/zerofltexx.png")
