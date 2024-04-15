@@ -14,6 +14,10 @@
 app/FFFFFFFF000000000000000000000001.drbin:vendor/app/FFFFFFFF000000000000000000000001.drbin
 app/mcRegistry/*.tlbin:vendor/app/mcRegistry/
 -bin/mcDriverDaemon:vendor/bin/mcDriverDaemon
+-lib/libMcRegistry.so:vendor/lib/libMcRegistry.so
+-lib64/libMcRegistry.so:vendor/lib64/libMcRegistry.so
+-lib/libMcClient.so:vendor/lib/libMcClient.so
+-lib64/libMcClient.so:vendor/lib64/libMcClient.so
 
 # Radio
 -lib/libsec-ril-dsds.so:vendor/lib/libsec-ril-dsds.so
@@ -25,12 +29,6 @@ app/mcRegistry/*.tlbin:vendor/app/mcRegistry/
 -lib/libprotobuf-cpp-full.so:vendor/lib/libprotobuf-cpp-fl26.so
 -lib64/libprotobuf-cpp-full.so:vendor/lib64/libprotobuf-cpp-fl26.so
 
-# Mobicore
--lib/libMcRegistry.so:vendor/lib/libMcRegistry.so
--lib64/libMcRegistry.so:vendor/lib64/libMcRegistry.so
--lib/libMcClient.so:vendor/lib/libMcClient.so
--lib64/libMcClient.so:vendor/lib64/libMcClient.so
-
 # NFC - A810FXXU2CRL1 (O)
 -vendor/lib/hw/nfc_nci.default.so|c6b2292323b827f3261ba33956604b90de8a29cd
 -vendor/lib64/hw/nfc_nci.default.so|347836411179d98a47c7de7bf9e92ac00c5a742a
@@ -39,4 +37,4 @@ app/mcRegistry/*.tlbin:vendor/app/mcRegistry/
 vendor/etc/nxp/*.txt
 
 # LifeVibes
--vendor/lib/*.so:vendor/lib/soundfx/
+-lib/*.so:vendor/lib/soundfx/
