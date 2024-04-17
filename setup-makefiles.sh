@@ -6,37 +6,33 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-set -e
+set -euo pipefail
 
-VENDOR=samsung
-DEVICE=zerofltexx
-
-# Load extract_utils and do some sanity checks
+# Define variables
+VENDOR="samsung"
+DEVICE="zerofltexx"
 MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
-
 ANDROID_ROOT="${MY_DIR}/../../.."
-
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
-if [ ! -f "${HELPER}" ]; then
-    echo "Unable to find helper script at ${HELPER}"
-    exit 1
-fi
-source "${HELPER}"
 
-# Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
+# Functions
+initialize() {
+    # Check if the helper script exists
+    if [ ! -f "${HELPER}" ]; then
+        echo "Error: Unable to find helper script at ${HELPER}"
+        exit 1
+    fi
 
-# Warning headers and guards
-write_headers
+    # Source the helper script
+    source "${HELPER}"
+}
 
-write_makefiles "${MY_DIR}/proprietary-files.txt" true
+add_custom_makefile_rules() {
+    # Add custom rules to the generated Android makefiles
+    OUTDIR="vendor/${VENDOR}/${DEVICE}"
+    ANDROID_MK="${ANDROID_ROOT}/${OUTDIR}/Android.mk"
 
-###################################################################################################
-# CUSTOM PART START                                                                               #
-###################################################################################################
-OUTDIR=vendor/$VENDOR/$DEVICE
-(cat << EOF) >> $ANDROID_ROOT/$OUTDIR/Android.mk
+    cat <<EOF >> "${ANDROID_MK}"
 include \$(CLEAR_VARS)
 
 LIFEVIBES_LIBS := libLifevibes_lvverx.so libLifevibes_lvvetx.so
@@ -51,9 +47,17 @@ LIFEVIBES_SYMLINKS := \$(addprefix \$(TARGET_OUT_VENDOR)/lib/,\$(notdir \$(LIFEV
 ALL_DEFAULT_INSTALLED_MODULES += \$(LIFEVIBES_SYMLINKS)
 
 EOF
-###################################################################################################
-# CUSTOM PART END                                                                                 #
-###################################################################################################
+}
 
-# Done
-write_footers
+# Main
+main() {
+    initialize
+    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
+    write_headers
+    write_makefiles "${MY_DIR}/proprietary-files.txt" true
+    add_custom_makefile_rules
+    write_footers
+}
+
+# Execute main
+main

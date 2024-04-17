@@ -1,7 +1,11 @@
-soong_namespace {
-    imports: ["device/samsung/universal7420-common"],
-}
+// device/samsung/zerofltexx/Android.bp
 
+// Define imports for the module
+imports = [
+    "device/samsung/universal7420-common",
+]
+
+// Define subdirectories for the module
 subdirs = [
     "init",
 ]

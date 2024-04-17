@@ -12,17 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file sets variables that control the way modules are built
-# thorughout the system. It should not be used to conditionally
-# disable makefiles (the proper mechanism to control what gets
-# included in a build is to use PRODUCT_PACKAGES in a product
-# definition file).
-#
-
-# inherit from universal7420-common
+# Inherit common configurations from universal7420-common
 include device/samsung/universal7420-common/BoardConfigCommon.mk
 
+# Device-specific path
 DEVICE_PATH := device/samsung/zerofltexx
 
 # Assert
@@ -33,13 +26,13 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Camera-shims
 TARGET_LD_SHIM_LIBS += \
-	/vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-	/vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
+    /vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
+    /vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
 
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
-	/vendor/lib/libbauthserver.so|/vendor/lib/libbauthtzcommon_shim.so \
-	/vendor/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so
+    /vendor/lib/libbauthserver.so|/vendor/lib/libbauthtzcommon_shim.so \
+    /vendor/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
@@ -59,5 +52,5 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
-# inherit from the proprietary version
+# Inherit from the proprietary version
 include vendor/samsung/zerofltexx/BoardConfigVendor.mk
